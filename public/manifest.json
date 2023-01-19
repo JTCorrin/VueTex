@@ -1,0 +1,54 @@
+{
+    "manifest_version": 3,
+    "name": "VueTex",
+    "version": "0.0.2",
+    "description": "Vue 3, Typescript, Vuetify chrome browser extension template",
+    "action": {
+      "default_icon": "./assets/logo.png",
+      "default_popup": "./popup/index.html"
+    },
+    "options_ui": {
+      "page": "./options/index.html",
+      "open_in_tab": true
+    },
+    "background": {
+      "service_worker": "./background/index.mjs"
+    },
+    "icons": {
+      "16": "./assets/logo.png",
+      "48": "./assets/logo.png",
+      "128": "./assets/logo.png"
+    },
+    "permissions": [
+      "tabs",
+      "storage"
+    ],
+    "host_permissions": [
+      "*://*/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": [
+          "http://*/*",
+          "https://*/*"
+        ],
+        "js": [
+          "./contentScripts/index.global.js"
+        ]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "contentScripts/style.css"
+        ],
+        "matches": [
+          "<all_urls>"
+        ]
+      }
+    ],
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+  }
+  
