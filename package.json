@@ -1,7 +1,9 @@
 {
-  "name": "VueTex",
+  "name": "vuetex",
   "version": "0.0.2",
   "description": "Vue 3, Typescript, Vuetify chrome browser extension template",
+  "author": "JT @ Corrin Data",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build && vite build --config vite.config.content.ts && tsup",
